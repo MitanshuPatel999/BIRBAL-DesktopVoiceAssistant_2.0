@@ -1,0 +1,253 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: #57e1ed;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  font-family: "Roboto Mono", monospace;
+}
+
+h1 {
+  color: #fd3330;
+  text-align: center;
+  margin-bottom: 0px;
+  font-weight: bold;
+  -webkit-text-stroke: 1px #f3d861;
+
+  /* font-size: 40px; */
+}
+
+#content_container {
+  width: 100%;
+  max-width: 500px;
+  height: 90%;
+  max-height: 500px;
+
+}
+
+#form_container {
+  width: 100%;
+  height: 100%;
+  background-image: -webkit-linear-gradient(25deg, #fd3330, #f3a315);
+  background-color: -webkit-linear-gradient(25deg, #fd3330, #f3a315);
+  box-shadow: 0 0 50px -20px #fd3330;
+  border-radius: 2%;
+  border: 1px solid transparent;
+  overflow: auto;
+
+}
+
+#form_header_container {
+  width: 100%;
+  height: 5%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+
+  padding: 20px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+
+  border-bottom: 1px solid transparent;
+  border-image: -webkit-linear-gradient(25deg, #fd3330, #f3a315) 20;
+  background: #57e1ed;
+}
+
+#form_header {
+  display: inline-block;
+  font-size: 15px;
+  /* font-family: Bowlby One SC; */
+  font-weight: 900;
+  text-transform: uppercase;
+  justify-content: space-around;
+  letter-spacing: 1px;
+  background-clip: text;
+
+  background: -webkit-linear-gradient(25deg, #fd3330, #f3a315);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#form_content_container {
+  width: 100%;
+  /* height: 80%;
+  padding-bottom: 0px; */
+
+  float: left;
+  background: #57e1ed;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 30px;
+  overflow: auto;
+}
+
+#form_content_inner_container {
+  width: 75%;
+  height: 100%;
+
+  float: left;
+
+}
+
+input {
+  width: 100%;
+  height: 40px;
+
+  padding-left: 10px;
+  margin-bottom: 20px;
+
+  background: #57e1ed;
+  font-family: Montserrat;
+  font-weight: 500;
+  /* color: ; */
+  font-size: 12px;
+
+  border-bottom: 2px solid transparent;
+  border-top-left-radius: 2%;
+  border-top-right-radius: 2%;
+  border-image: -webkit-linear-gradient(25deg, #fd3330, #f3a315) 1;
+}
+
+#button_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 20%;
+  color: #fff;
+  border-radius: 20px;
+  margin-bottom: 50px;
+  background-image: linear-gradient(80deg, #fd3330, #f3a315);
+}
+
+#button_container button {
+  width: 50%;
+  height: 100%;
+  float: left;
+
+  background: transparent;
+  color: inherit;
+
+  /* font-family: Montserrat; */
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#bt1 {
+  border-right: 1px solid #57e1ed;
+}
+
+#bt2 {
+  border-left: 1px solid #57e1ed;
+}
+
+/*camera capture*/
+#video {
+  width: 100%;
+  height: 50%;
+  border: 1px solid #fd3330;
+  /* width: 270px;
+  height: 200px; */
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-bottom: 0px;
+}
+
+#photo {
+  width: 100%;
+  height: 50%;
+  border: 1px solid #fd3330;
+  align-items: center;
+  justify-content: center;
+  display: inline-block;
+  margin-bottom: 0px;
+}
+
+#canvas {
+  display: none;
+}
+
+
+
+.camera {
+  width: 100%;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+}
+
+.output {
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 30px;
+
+}
+
+#startbutton {
+  width: 50%;
+  height: 100%;
+  border: 1px solid #324042;
+  background-color: #57e1ed;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  color: #324042;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.contentarea {
+  font-size: 16px;
+  font-family: Arial;
+  text-align: center;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fd3330; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+}

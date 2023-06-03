@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="icon.jpg">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BIRBAL - AI based voice assistant</title>
+
+  <script defer src="face-api.min.js"></script>
+  <script defer src="frs.js"></script>
+  <link rel="stylesheet" href="fr.css">
+  <!---- CSS Linkage ------>
+  <link rel="stylesheet" href="style.css">
+
+  <!---- Font Awesome Cdn Linkage ------>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  
+</head>
+
+<body>
+  <!--oncontextmenu="return false"-->
+  <section class="main">
+    <div class="image-container">
+      <div class="image">
+        <img src="BIRBAL_FINAL.gif" alt="image"">
+            </div>
+            <h1 class="title">B I R B A L</h1>
+        <p>I'm your virtual assistant. How can i help you?</p>
+      </div>
+      <div id="text_container">
+        <div id="form_container">
+          <div id="form_header_container">
+            <h3 class="title1">message box</h3>
+          </div>
+          <div id="form_content_container">
+            <div id="form_content_inner_container">
+              <center>
+                <textarea rows="5" id="text"
+                  placeholder='Say "type message" for typing using your voice.&#10;Say "continue message" for continue typing.&#10;Say "delete message" for deleting whole message.'></textarea>
+                <div id="cv">
+      <video id="video" width="480" height="360" autoplay>
+    </div>
+              </center>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="input" id="talk">
+        <button class="talk"><i class="fas fa-microphone-alt"></i></button>
+        <h1 class="content"> Click here to speak</h1>
+      </div>
+  </section>
+
+  <!------- Js Linkage --------->
+  <script type="module" src="home_script.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+  <script>
+    if (annyang) {
+      // Let's define our first command. First the text we expect, and then the function it should call
+      var commands = {
+        'birbal': function () {
+          document.getElementById('talk').click();
+        },
+        'beerbal': function () {
+          document.getElementById('talk').click();
+        },
+        'beerbul': function () {
+          document.getElementById('talk').click();
+        },
+        'beerbul': function () {
+          document.getElementById('talk').click();
+        }
+      };
+      // Add our commands to annyang
+      annyang.addCommands(commands);
+      // Start listening. You can call this here, or attach this call to an event, button, etc.
+      annyang.start();
+    }
+  </script>
+</body>
+
+</html>
