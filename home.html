@@ -15,7 +15,10 @@
   <link rel="stylesheet" href="style.css">
 
   <!---- Font Awesome Cdn Linkage ------>
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  
   
 </head>
 
@@ -29,19 +32,24 @@
             <h1 class="title">B I R B A L</h1>
         <p>I'm your virtual assistant. How can i help you?</p>
       </div>
-      <div id="text_container">
+      <div id="text_container" class="p-3">
         <div id="form_container">
           <div id="form_header_container">
-            <h3 class="title1">message box</h3>
+            
+             <button class="mode"><span class="tmode">Message mode</span>&nbsp<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z"/>
+</svg></button>
           </div>
           <div id="form_content_container">
             <div id="form_content_inner_container">
               <center>
-                <textarea rows="5" id="text"
-                  placeholder='Say "type message" for typing using your voice.&#10;Say "continue message" for continue typing.&#10;Say "delete message" for deleting whole message.'></textarea>
+                <textarea rows="10" id="text"
+                  placeholder='Use wake word : "Birbal" to give command.&#10;&#10;Say "type message" for typing using your voice.&#10;Say "continue message" for continue typing.&#10;Say "delete message" for deleting whole message.'></textarea>
                 <div id="cv">
       <video id="video" width="480" height="360" autoplay>
     </div>
+                        <iframe id="frame" src="https://www.wikipedia.com/" frameborder="0" allowfullscreen></iframe>
+
               </center>
             </div>
           </div>

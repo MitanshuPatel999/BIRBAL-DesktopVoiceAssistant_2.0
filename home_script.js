@@ -64,8 +64,12 @@ const btn = document.querySelector('#talk');
 const content = document.querySelector('.content');
 const text = document.querySelector('#text');
 const cv = document.querySelector('#cv');
+const frame = document.querySelector('#frame');
+const title = document.querySelector('.tmode');
 const video = document.getElementById("video");
+const mode = document.querySelector(".mode");
 var flagcv=0;
+var clickNum=0;
 
 
 let voices = [];
@@ -109,6 +113,19 @@ window.addEventListener('load', () => {
   window.first=true;
 })
 
+mode.addEventListener('click', () => {
+  clickNum+=1;
+  if (clickNum%3==1){
+    Frame();
+  }
+  else if (clickNum%3==2){
+    CV();
+  }
+  else{
+    MB();
+  }
+})
+
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
 const mbrecognition = new SpeechRecognition();
@@ -139,7 +156,9 @@ btn.addEventListener('click', () => {
 
 function CV(){
   text.style.display="none";
+  frame.style.display="none";
   cv.style.display="flex";
+  title.innerHTML="Vision Mode";
   if (flagcv==0){
   startWebcam();
   flagcv+=1;
@@ -148,7 +167,16 @@ function CV(){
 
 function MB(){
   cv.style.display="none";
+  frame.style.display="none";
   text.style.display="flex";
+  title.innerHTML="Message Mode";
+}
+
+function Frame(){
+  cv.style.display="none";
+  text.style.display="none";
+  frame.style.display="flex";
+  title.innerHTML="Wiki Mode";
 }
 
 function speakThis(message) {
@@ -293,7 +321,7 @@ function speakThis(message) {
     speech.text = text.value;
   }
 
-  else if ((message.includes('detect') || message.includes('recognise') || message.includes('open'))&&message.includes('face')) {
+  else if (((message.includes('detect') || message.includes('recognise') || message.includes('open'))&&message.includes('face'))||message.includes('vision mode')) {
     CV();
     content.textContent = " Opening camera ";
     speech.text = "detecting faces";
@@ -384,12 +412,12 @@ function speakThis(message) {
     // window.dispatchEvent(new KeyboardEvent('keydown', {'keycode': 13}));
   }
 
-  else if (message.includes('wikipedia')) {
-    message = message.replace("wikipedia", "")
-    window.open(`https://en.wikipedia.org/wiki/${message.replace("wikipedia", "")}`, "_blank");
-    const finalText = "This is what i found on wikipedia regarding " + message;
-    speech.text = finalText;
-  }
+  // else if (message.includes('wikipedia')) {
+  //   message = message.replace("wikipedia", "")
+  //   window.open(`https://en.wikipedia.org/wiki/${message.replace("wikipedia", "")}`, "_blank");
+  //   const finalText = "This is what i found on wikipedia regarding " + message;
+  //   speech.text = finalText;
+  // }
 
   else if (message.includes('time')) {
     const time = new Date().toLocaleString(undefined, { hour: "numeric", minute: "numeric" })
@@ -408,10 +436,21 @@ function speakThis(message) {
     const finalText = "Opening Calculator";
     speech.text = finalText;
   }
-
-  else if (message.includes('what is') || message.includes('who is') || message.includes('what are')) {
+    
+else if (message.includes('search')||message.includes('browse')||message.includes('google')) {
     window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
     const finalText = "This is what i found on internet regarding " + message;
+    speech.text = finalText;
+  }
+  
+  else if (message.includes('what is') || message.includes('who is') || message.includes('what are') || message.includes('wikipedia')) {
+    message = message.replace("what is", "")
+    message = message.replace("who is", "")
+    message = message.replace("what are", "")
+
+    frame.src=`https://en.m.wikipedia.org/wiki/${message.replace("wikipedia", "")}`
+    Frame()
+    const finalText = "This is what i found about" + message;
     speech.text = finalText;
   }
 

@@ -1,5 +1,6 @@
 const video = document.getElementById("video");
 const cv = document.getElementById("cv");
+// const loader = document.querySelector(".loader");
 
 
 Promise.all([
@@ -90,6 +91,7 @@ if (detections==null||detections=="undefined")
 video.addEventListener('play', async () => {
   const labeledFaceDescriptors = await getLabeledFaceDescriptions();
   const faceMatcher = new faceapi.FaceMatcher(labeledFaceDescriptors);
+  // loader.style.display="none";
   console.log("Detecting faces...")
   const canvas = faceapi.createCanvasFromMedia(video);
   // document.body.append(canvas);

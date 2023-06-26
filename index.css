@@ -140,7 +140,6 @@ input {
   width: 50%;
   height: 100%;
   float: left;
-
   background: transparent;
   color: inherit;
 
@@ -148,9 +147,7 @@ input {
   letter-spacing: 1px;
   font-size: 16px;
   font-weight: bold;
-
   cursor: pointer;
-
   display: flex;
   justify-content: center;
   align-items: center;
